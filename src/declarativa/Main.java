@@ -2,25 +2,31 @@ package declarativa;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
 
     public static void main(String []args) {
 
-        List<User> users = new ArrayList<>();
-        // Filtrar
-        //Obtener la cantidad de usuarios con una edad mayor a 18 y que su username comienze con mayuscula.
-        users.add(new User("Rafael", 25));
-        users.add(new User("daniel", 20));
-        users.add(new User("Tania", 15));
-        users.add(new User("Luisa", 24));
-        users.add(new User("Raul", 12));
+        //Colecion
 
-        long count = users.stream()
-                        .filter( user -> user.getAge() > 18 )
-                        .filter( user -> user.getUsername().startsWith("R") )
-                        .count();
-        System.out.println(count);
+        List<User> users = new ArrayList<>();
+        Stream<User> stream = users.stream();// Abstraccion
+
+        //Stream
+
+        Stream<User> filter =   stream.filter( user -> user.getAge() > 18);
+
+        //arreglo
+
+        int[] numbers = {1,2,3,4,5};
+        Stream<int[]> numersS = Stream.of(numbers);
+
+        //secuencia
+
+        Stream<String> names = Stream.of("codiugo1","codi2","coduide3");
+
+
 
 
 
