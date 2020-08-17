@@ -9,6 +9,11 @@ public class Main {
 
         int resultado = suma.suma(10,20);
         System.out.println(resultado);
+
+        suma = (val1, val2) -> {
+            int result = val1 + val2;
+            return result;
+        };
     }
 
 }
