@@ -8,10 +8,11 @@ public class Main {
     public static  void main(String ...args){
         // OBtener el cuadrado de todos los numeros de la lista.
 
-        List<Integer> numeros = List.of(1,2,3,4,5,6,7,8,9,10);
+        List<Integer> numeros = List.of(10,10,9,6,6,7,8,9,10);
 
-        numeros = numeros.stream().map( num -> num * num ).collect(Collectors.toList());
+       boolean result = numeros.stream()
+                                .anyMatch( num -> num < 6);
 
-        System.out.println(numeros);
+        System.out.println(result);
     }
 }
