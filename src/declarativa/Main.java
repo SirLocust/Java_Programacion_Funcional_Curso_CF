@@ -9,23 +9,23 @@ public class Main {
     public static void main(String []args) {
 
         //Colecion
-
         List<User> users = new ArrayList<>();
-        Stream<User> stream = users.stream();// Abstraccion
 
-        //Stream
+        users.add(new User("raul", 23));
+        users.add(new User("paola", 23));
+        users.add(new User("luiza", 15));
+        users.add(new User("renata", 20));
+        users.add(new User("monica", 21));
 
-        Stream<User> filter =   stream.filter( user -> user.getAge() > 18);
+        //Proceso
+        //Iteracion interna
 
-        //arreglo
 
-        int[] numbers = {1,2,3,4,5};
-        Stream<int[]> numersS = Stream.of(numbers);
+        //
 
-        //secuencia
+        Stream<User> stream = users.stream();
 
-        Stream<String> names = Stream.of("codiugo1","codi2","coduide3");
-
+        System.out.println( stream.filter( user -> user.getAge() > 18).count()) ;
 
 
 
